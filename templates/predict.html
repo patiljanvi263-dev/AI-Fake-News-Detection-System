@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detect Fake News</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📰 Detect Fake News</h1>
+
+    <p>
+        Enter a news article below and click <strong>Predict</strong> to check whether it is Real or Fake.
+    </p>
+
+    <hr>
+
+    <form action="{{ url_for('predict_result') }}" method="POST">
+
+        <textarea
+            name="news"
+            rows="8"
+            placeholder="Paste the news article here..."
+            required></textarea>
+
+        <br><br>
+
+        <button type="submit">
+            🔍 Predict
+        </button>
+
+    </form>
+
+    {% if prediction %}
+
+    <hr>
+
+    <div class="result-box">
+
+        <h2>Prediction Result</h2>
+
+        <h3>{{ prediction }}</h3>
+
+        <p>
+            <strong>Confidence:</strong> {{ confidence }}%
+        </p>
+
+    </div>
+
+    {% endif %}
+
+    <br>
+
+    <button onclick="window.location.href='{{ url_for('dashboard') }}'">
+        ⬅ Back to Dashboard
+    </button>
+
+</div>
+
+</body>
+
+</html>

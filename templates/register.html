@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | AI Fake News Detection</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📝 Register</h1>
+
+    <p>Create your account to continue.</p>
+
+    <hr>
+
+    <!-- Demo Registration -->
+    <form action="{{ url_for('register') }}" method="POST">
+
+        <input
+            type="text"
+            name="fullname"
+            placeholder="Full Name"
+            required>
+
+        <br><br>
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required>
+
+        <br><br>
+
+        <input
+            type="text"
+            name="username"
+            placeholder="Choose Username"
+            required>
+
+        <br><br>
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Create Password"
+            required>
+
+        <br><br>
+
+        <input
+            type="password"
+            name="confirm_password"
+            placeholder="Confirm Password"
+            required>
+
+        <br><br>
+
+        <button type="submit">
+            Register
+        </button>
+
+    </form>
+
+    <br>
+
+    <p>
+        Already have an account?
+        <a href="{{ url_for('login') }}">Login Here</a>
+    </p>
+
+    <br>
+
+    <button onclick="window.location.href='{{ url_for('home') }}'">
+        🏠 Back to Home
+    </button>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | AI Fake News Detection</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<nav>
+    <a href="{{ url_for('dashboard') }}">🏠 Dashboard</a>
+    <a href="{{ url_for('predict_page') }}">🤖 Detect News</a>
+    <a href="{{ url_for('history') }}">📜 History</a>
+    <a href="{{ url_for('profile') }}">👤 Profile</a>
+    <a href="{{ url_for('logout') }}">🚪 Logout</a>
+</nav>
+
+
+
+<div class="container">
+
+
+<h1>Welcome, {{ username }} 👋</h1>
+
+<p>
+AI-Powered Fake News Detection and Verification System
+</p>
+
+
+<hr>
+
+
+
+<div class="card-container">
+
+
+<div class="card">
+
+<h2>🤖 Detect Fake News</h2>
+
+<p>
+Analyze any news article using Machine Learning.
+</p>
+
+<button onclick="window.location.href='{{ url_for('predict_page') }}'">
+Start Detection
+</button>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h2>📜 Prediction History</h2>
+
+<p>
+View your previous fake news analysis results.
+</p>
+
+<button onclick="window.location.href='{{ url_for('history') }}'">
+View History
+</button>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h2>👤 Profile</h2>
+
+<p>
+View your account information.
+</p>
+
+<button onclick="window.location.href='{{ url_for('profile') }}'">
+View Profile
+</button>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</body>
+
+</html>
