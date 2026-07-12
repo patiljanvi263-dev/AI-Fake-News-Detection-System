@@ -13,10 +13,11 @@ app.secret_key = "fake_news_secret_key"
 # ==========================
 
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="your_password",
-    database="fake_news_detection"
+    host=os.environ.get("DB_HOST", "localhost"),
+    user=os.environ.get("DB_USER", "root"),
+    password=os.environ.get("DB_PASSWORD", "your_password"),
+    database=os.environ.get("DB_NAME", "fake_news_detection"),
+    port=int(os.environ.get("DB_PORT", 3306))
 )
 
 cursor = db.cursor()
